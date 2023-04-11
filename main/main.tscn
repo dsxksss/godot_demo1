@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://can8xgswf4wip"]
+
+[ext_resource type="PackedScene" uid="uid://dphsn0qti5srg" path="res://player/player.tscn" id="1_xutib"]
+[ext_resource type="PackedScene" uid="uid://b8a65stololjc" path="res://camera/player_camera.tscn" id="2_dpmuy"]
+[ext_resource type="TileSet" uid="uid://ciifwwle3e02i" path="res://tiles/tileset.tres" id="3_7bd4q"]
+[ext_resource type="Texture2D" uid="uid://bhgmhs82fhx5d" path="res://tiles/tile.png" id="4_wmt4e"]
+
+[node name="main" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_xutib")]
+unique_name_in_owner = true
+
+[node name="player_camera" parent="." instance=ExtResource("2_dpmuy")]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-138, 89)
+tile_set = ExtResource("3_7bd4q")
+format = 2
+
+[node name="Tile" type="Sprite2D" parent="."]
+position = Vector2(-7, 13)
+texture = ExtResource("4_wmt4e")
