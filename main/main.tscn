@@ -18,5 +18,6 @@ tile_set = ExtResource("3_7bd4q")
 format = 2
 
 [node name="Tile" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-7, 13)
 texture = ExtResource("4_wmt4e")
