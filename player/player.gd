@@ -1,11 +1,21 @@
 extends CharacterBody2D
 
-# 移动速度
-const MAX_SPEED = 125
-# 加速度
-const ACCELERATION_SMOOTHING = 25
+@onready var heart_component:HeartComponent = $heart_component
 
-func _process(delta) -> void:
+# 移动速度
+const MAX_SPEED:float = 125
+# 加速度
+const ACCELERATION_SMOOTHING:float = 25
+
+func _ready() -> void:
+	print(heart_component.current_health)
+	$Timer.timeout.connect(func():
+		heart_component.damage(47)
+		print(heart_component.current_health
+	))
+	
+
+func _process(delta: float) -> void:
 	var movement_vector = get_movement_vector()
 	var direction = movement_vector.normalized()
 	# 基础移速
@@ -20,3 +30,4 @@ func get_movement_vector() -> Vector2:
 	var x_movement = Input.get_action_strength("right") - Input.get_action_strength("left")
 	var y_movement = Input.get_action_strength("down") - Input.get_action_strength("up")
 	return Vector2(x_movement,y_movement)
+ 
