@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 @onready var heart_component:HeartComponent = $heart_component
 
 # 移动速度
@@ -10,11 +10,10 @@ const ACCELERATION_SMOOTHING:float = 25
 func _ready() -> void:
 	print(heart_component.current_health)
 	$Timer.timeout.connect(func():
-		heart_component.damage(47)
+		heart_component.damage(100)
 		print(heart_component.current_health
 	))
 	
-
 func _process(delta: float) -> void:
 	var movement_vector = get_movement_vector()
 	var direction = movement_vector.normalized()
