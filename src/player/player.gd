@@ -9,10 +9,8 @@ const ACCELERATION_SMOOTHING:float = 25
 
 func _ready() -> void:
 	print(heart_component.current_health)
-	$Timer.timeout.connect(func():
-		heart_component.damage(100)
-		print(heart_component.current_health
-	))
+	heart_component.damage(40)
+	print(heart_component.current_health)
 	
 func _process(delta: float) -> void:
 	var movement_vector = get_movement_vector()

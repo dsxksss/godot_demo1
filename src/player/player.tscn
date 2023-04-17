@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://dphsn0qti5srg"]
 
-[ext_resource type="Texture2D" uid="uid://csstv01aspy5l" path="res://player/player1.png" id="1_e3flg"]
-[ext_resource type="Script" path="res://player/player.gd" id="1_j4e7f"]
-[ext_resource type="PackedScene" uid="uid://c55neguausmaw" path="res://component/heart_component.tscn" id="2_c1qbx"]
+[ext_resource type="Texture2D" uid="uid://csstv01aspy5l" path="res://src/player/player1.png" id="1_e3flg"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_rufsy"]
+[ext_resource type="PackedScene" uid="uid://c55neguausmaw" path="res://src/component/heart_component.tscn" id="2_c1qbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy37y"]
 radius = 5.0
 
 [node name="player" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_j4e7f")
+script = ExtResource("1_rufsy")
 
 [node name="heart_component" parent="." instance=ExtResource("2_c1qbx")]
 
