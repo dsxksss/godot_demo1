@@ -16,6 +16,7 @@ func damage(damage_amount:float)->void:
 	emit_signal("heart_changed")
 	# 在下一个空闲帧中再调用检查是否受伤死亡函数
 	Callable(check_death).call_deferred()
+	print(current_health)
 
 func check_death()->void:
 	if current_health <= 0:

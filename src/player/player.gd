@@ -8,9 +8,7 @@ const MAX_SPEED:float = 125
 const ACCELERATION_SMOOTHING:float = 25
 
 func _ready() -> void:
-	print(heart_component.current_health)
-	heart_component.damage(40)
-	print(heart_component.current_health)
+	pass
 	
 func _process(delta: float) -> void:
 	var movement_vector = get_movement_vector()
