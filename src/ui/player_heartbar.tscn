@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d288gvdng0w8t"]
+
+[ext_resource type="Script" path="res://src/ui/player_heartbar.gd" id="1_h36j1"]
+[ext_resource type="StyleBox" uid="uid://ggcu68byfan2" path="res://src/ui/player_heartbar_bg.tres" id="1_k8ijn"]
+[ext_resource type="StyleBox" uid="uid://doqkolbmvw3qy" path="res://src/ui/player_heartbar_fill.tres" id="2_yo2p7"]
+
+[node name="player_heartbar" type="ProgressBar"]
+offset_right = 32.0
+offset_bottom = 4.0
+pivot_offset = Vector2(17, 2)
+mouse_filter = 2
+theme_override_styles/background = ExtResource("1_k8ijn")
+theme_override_styles/fill = ExtResource("2_yo2p7")
+step = 1.0
+value = 100.0
+show_percentage = false
+script = ExtResource("1_h36j1")

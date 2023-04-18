@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dphsn0qti5srg"]
+[gd_scene load_steps=8 format=3 uid="uid://dphsn0qti5srg"]
 
 [ext_resource type="Texture2D" uid="uid://csstv01aspy5l" path="res://src/player/player1.png" id="1_e3flg"]
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_rufsy"]
 [ext_resource type="PackedScene" uid="uid://c55neguausmaw" path="res://src/component/heart_component.tscn" id="2_c1qbx"]
 [ext_resource type="PackedScene" uid="uid://d2r2yoawa1k7e" path="res://src/component/hurtbox_component.tscn" id="3_waqfu"]
+[ext_resource type="PackedScene" uid="uid://d288gvdng0w8t" path="res://src/ui/player_heartbar.tscn" id="5_obggd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_brgqr"]
 radius = 7.0
@@ -15,6 +16,13 @@ radius = 5.0
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_rufsy")
+
+[node name="player_heartbar" parent="." node_paths=PackedStringArray("heart_component") instance=ExtResource("5_obggd")]
+offset_left = -17.0
+offset_top = -14.0
+offset_right = 15.0
+offset_bottom = -10.0
+heart_component = NodePath("../heart_component")
 
 [node name="heart_component" parent="." instance=ExtResource("2_c1qbx")]
 
